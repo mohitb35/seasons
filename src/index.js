@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 
 class App extends React.Component {
 
-	constructor(props) {
+	/* constructor(props) {
 		super(props); //call component parent constructor function
 
 		// Only exception where we do direct assignment to this.state
@@ -13,7 +13,12 @@ class App extends React.Component {
 			lat: null,
 			errorMessage: ""
 		}
-	}
+	} */
+
+	state = {
+		lat: null,
+		errorMessage: ""
+	};
 
 	componentDidMount() {
 		console.log('component rendered to screen', this.state);
@@ -31,7 +36,7 @@ class App extends React.Component {
 				})
 			}
 		);
-	};
+	}
 
 	/* componentDidUpdate() {
 		console.log('component updated', this.state);
