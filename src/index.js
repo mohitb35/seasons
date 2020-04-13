@@ -43,9 +43,7 @@ class App extends React.Component {
 		console.log('component updated', this.state);
 	};
 
-
-	// Must define render
-	render() {
+	renderContent() {
 		if (this.state.errorMessage && !this.state.lat) {
 			return (
 				<div>
@@ -64,8 +62,18 @@ class App extends React.Component {
 			<Spinner message="Please provide location permissions."/>
 		);
 	}
-}
 
+
+	// Must define render
+	render() {
+		return (
+			<div className="">
+				{this.renderContent()};
+			</div>
+		)
+	} 
+}
+	
 /* const App = () => {
 	let latitude;
 	window.navigator.geolocation.getCurrentPosition(
