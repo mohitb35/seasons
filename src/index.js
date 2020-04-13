@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component {
 
@@ -38,9 +39,9 @@ class App extends React.Component {
 		);
 	}
 
-	/* componentDidUpdate() {
+	componentDidUpdate() {
 		console.log('component updated', this.state);
-	}; */
+	};
 
 
 	// Must define render
@@ -60,7 +61,7 @@ class App extends React.Component {
 		}
 
 		return (
-			<div>Loading...</div>
+			<Spinner message="Please provide location permissions."/>
 		);
 	}
 }
