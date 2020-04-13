@@ -13,14 +13,16 @@ class App extends React.Component {
 			lat: null,
 			errorMessage: ""
 		}
+	}
 
+	componentDidMount() {
+		console.log('component rendered to screen', this.state);
 		window.navigator.geolocation.getCurrentPosition(
 			(position) => {
 				// set state using setState...no direct assignment!
 				this.setState({
 					lat: position.coords.latitude
 				})
-
 				// NOT this.state.lat = position.coords.latitidue --> INVALID!!
 			},
 			(err) => {
@@ -29,8 +31,12 @@ class App extends React.Component {
 				})
 			}
 		);
-	}
-	
+	};
+
+	/* componentDidUpdate() {
+		console.log('component updated', this.state);
+	}; */
+
 
 	// Must define render
 	render() {
